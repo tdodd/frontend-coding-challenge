@@ -1,0 +1,55 @@
+header
+	z-index: 2 // Above body
+	position: absolute
+	left: 0
+	top: 0
+	right: 0
+	height: $header-height
+	background: $secondary
+	box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28)
+
+	.hamburger
+		z-index: 10
+		position: absolute
+		top: 18px
+		left: 15px
+		padding-left: 0		
+		
+		&:hover
+			cursor: pointer
+
+		.hamburger-layer
+			border-radius: 5px
+			list-style: none
+			width: 35px
+			height: 3px
+			background: $tertiary
+			margin-bottom: 8px
+
+	.searchbar
+		height: $header-height
+		padding-left: 100px
+		padding-top: 9px
+
+		.search-input
+			width: 75%
+			height: 45px
+			border: none
+			border-radius: 3px 0 0 3px
+			padding: 10px
+			font-size: 1.5em
+			padding-left: 15px
+
+		.glyphicon-search
+			position: absolute
+			top: 9px
+			height: 45px
+			border-radius: 0 3px 3px 0
+			font-size: 2em
+			padding: 9px
+			background: $tertiary
+			color: $secondary
+
+			&:hover
+				cursor: pointer
+				color: $secondary-hover

@@ -1,0 +1,44 @@
+.sidebar
+	position: absolute
+	z-index: 3 // Above header
+	top: 0
+	bottom: 0
+	left: -$sidebar-width // Sidebar initially hidden
+	width: $sidebar-width
+	background: rgba(255,255,255,0.9)
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+	overflow-x: hidden
+	overflow-y: auto
+
+	.logo
+		text-align: center
+		padding: 10px 0
+
+	.sidebar-inputs
+		position: relative
+
+		.sidebar-search
+			margin: 25px 10px
+
+			.sidebar-search-input
+				width: 100%
+				border: none
+				border-radius: 3px
+				padding: 5px
+				box-shadow: $inactive-shadow
+
+				&:hover, &:focus
+					box-shadow: $active-shadow
+
+		.sidebar-section
+			background: $secondary
+			color: #FFF
+			margin: 25px 5px
+			border-radius: 5px
+			padding: 15px
+			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+
+			.sidebar-lead
+				font-size: 1.5em
+
+
