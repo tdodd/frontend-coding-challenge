@@ -6,108 +6,75 @@
 	.sidebar-inputs
 
 		.sidebar-search
-			input.sidebar-search-input(type="text", placeholder="Search")
+			input.sidebar-search-input(type="text", placeholder="Advanced Search")
+
+		// Price slider
+		.price-label Maximum Price
+		.sidebar-slider
+			input#price(type="range" value="500" min="0" max="500")
+		.price-value 500$
 
 		// On special
 		.sidebar-section
 			p.sidebar-lead On special
 			
 			.input-group
-				input(type="checkbox" id="cb1")
-				label(for="cb1") True
+				input.sidebar-input(type="checkbox" id="on-special" dbcol="tpenspecial" value="true")
+				label(for="on-special") True
 
-		// Availability
-		.sidebar-section
-			p.sidebar-lead Availability
-			
-			.input-group
-				input(type="checkbox" id="cb1")
-				label(for="cb1") In Store
-			
-			.input-group
-				input(type="checkbox" id="cb2")
-				label(for="cb2") Online
-			
-			.input-group
-				input(type="checkbox" id="cb3")
-				label(for="cb3") Available Soon
-		
-		// Category
-		.sidebar-section
-			p.sidebar-lead Category
-		
-			.input-group
-				input(type="checkbox" id="cb1")
-				label(for="cb1") Red Wine
-			
-			.input-group
-				input(type="checkbox" id="cb2")
-				label(for="cb2") White Wine
-			
-			.input-group
-				input(type="checkbox" id="cb3")
-				label(for="cb3") Scottish Whiskey
+			.sidebar-btn-container
+				.sidebar-btn Search
 
 		// Country
 		.sidebar-section
 			p.sidebar-lead Country
 
 			.input-group
-				input(type="checkbox" id="cb1")
-				label(for="cb1") France
+				input.sidebar-input(type="checkbox" id="france" dbcol="tppays" value="France")
+				label(for="france") France
 			
 			.input-group
-				input(type="checkbox" id="cb2")
-				label(for="cb2") Italy
+				input.sidebar-input(type="checkbox" id="italy" dbcol="tppays" value="Italie")
+				label(for="italy") Italy
 			
 			.input-group
-				input(type="checkbox" id="cb3")
-				label(for="cb3") United States
+				input.sidebar-input(type="checkbox" id="etats-unis" dbcol="tppays" value="Etats-Unis")
+				label(for="etats-unis") United States
 
 			.input-group
-				input(type="checkbox" id="cb3")
-				label(for="cb3") Canada
+				input.sidebar-input(type="checkbox" id="canada" dbcol="tppays" value="Canada")
+				label(for="canada") Canada
 
 			.input-group
-				input(type="checkbox" id="cb3")
-				label(for="cb3") Spain
+				input.sidebar-input(type="checkbox" id="espagne" dbcol="tppays" value="Espagne")
+				label(for="espagne") Spain
 
-		// Region
-		.sidebar-section
-			p.sidebar-lead Region
-
-			.input-group
-				input(type="checkbox" id="cb1")
-				label(for="cb1") Bordeaux
-			
-			.input-group
-				input(type="checkbox" id="cb2")
-				label(for="cb2") Quebec
-			
-			.input-group
-				input(type="checkbox" id="cb3")
-				label(for="cb3") California
+			.sidebar-btn-container
+				.sidebar-btn Search
 
 		// Vintage
 		.sidebar-section
 			p.sidebar-lead Vintage
 
 			.input-group
-				input(type="checkbox" id="cb1")
-				label(for="cb1") 2015
+				input.sidebar-input(type="checkbox" id="2015" dbcol="tpmillesime" value="2015")
+				label(for="2015") 2015
 			
 			.input-group
-				input(type="checkbox" id="cb2")
-				label(for="cb2") 2014
+				input.sidebar-input(type="checkbox" id="2014" dbcol="tpmillesime" value="2014")
+				label(for="2014") 2014
 			
 			.input-group
-				input(type="checkbox" id="cb3")
-				label(for="cb3") 2013
+				input.sidebar-input(type="checkbox" id="2013" dbcol="tpmillesime" value="2013")
+				label(for="2013") 2013
 
 			.input-group
-				input(type="checkbox" id="cb3")
-				label(for="cb3") 2012
+				input.sidebar-input(type="checkbox" id="2012" dbcol="tpmillesime" value="2012")
+				label(for="2012") 2012
 
 			.input-group
-				input(type="checkbox" id="cb3")
-				label(for="cb3") 2011
+				input.sidebar-input(type="checkbox" id="2011" dbcol="tpmillesime" value="2011")
+				label(for="2011") 2011
+
+			.sidebar-btn-container
+				.sidebar-btn Search

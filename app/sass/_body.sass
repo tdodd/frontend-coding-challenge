@@ -2,11 +2,32 @@
 	height: 100%
 	position: relative
 	top: $header-height
-	background: #F1F1F1
+	background: $background
+ 	padding-bottom: 100px
+
+	.error
+		display: none
+		background: $primary
+		text-align: center
+		color: #FFF
+		padding: 10px 0
+	
+		.error-msg
+			font-size: 1.5em
+			display: inline
+
+		.glyphicon-remove
+			position: absolute
+			right: 15px
+			top: 15px
+			font-size: 1.3em
+
+			&:hover
+				cursor: pointer
 
 	.hero-img
 		background: url('../images/saq.jpg')
-		height: 45%
+		height: 55%
 		background-position: center
 		background-repeat: no-repeat
 		background-size: cover
@@ -37,13 +58,16 @@
 
 	.container
 
-		.row
+		.product
+			margin-bottom: 15px
+	
+		.product-row
+			margin: 45px 0
 
 		.categories
 			font-weight: 100
 			text-align: center
 			margin: 50px 0
-
 
 		.products
 			
@@ -59,7 +83,7 @@
 
 			.product-name
 				position: relative
-				width: 150px
+				width: 175px
 				text-align: center
 				color: $secondary
 				font-size: 1.3em
@@ -68,7 +92,6 @@
 				&:hover
 					cursor: pointer
 					color: $secondary-hover
-
 
 		.loading
 			display: none
@@ -95,23 +118,47 @@
 					100%
 						left: 0
 		
+		.results-header
+			margin-top: 15px
+			margin-bottom: 25px
+			font-size: 1.5em
+
 		.results
 
-			.results-header
-				margin-bottom: 50px
-				font-size: 1.5em
-
 			.result
+				width: 200px
+				height: 350px
+				position: relative
 				display: inline-block
 				background: #FFF
 				border-radius: 3px
 				margin: 8px
-				padding: 8px
+				padding: 15px
 				box-shadow: $inactive-shadow
 				transition: $card-hover
+				text-align: center
 
 				&:hover
 					box-shadow: $active-shadow
 
 				.result-title
+					font-weight: bold
+					font-size: 1.2em
+					height: 50px
+
+				.result-thumbnail
+					margin: 10px 0
+
+				.result-details
+					height: 65px
+
+				.result-category, .result-region, .result-code
+					font-size: 0.8em
+					text-align: left
+
+				.result-price
+					margin-top: 10px
+					border-top: 2px solid $primary
+					font-size: 1.4em
+					padding-top: 8px
 					font-weight: bold

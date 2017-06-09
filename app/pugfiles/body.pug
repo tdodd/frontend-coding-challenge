@@ -1,9 +1,13 @@
 .body
 	
+	.error
+		.error-msg Enter a search term
+		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+	
 	.hero-img
 		.overlay
-		img.overlay-logo(src="../images/saq-logo.png")
-
+		a(href="")
+			img.overlay-logo(src="../images/saq-logo.png")
 
 	.container
 
@@ -13,49 +17,49 @@
 		// Homepage body
 		.products
 
-			h1.categories Categories
+			h1.categories Browse by Category
 
-			.row
+			.row.product-row
 				.col-md-3.col-sm-4.product
 					.product-image
-						img(src="https://www.saq.com/content/dam/saq/section-produits/icn-verres-vin.jpg", width="150", height="150", category="merlot")
+						img(src="https://www.saq.com/content/dam/saq/section-produits/icn-verres-vin.jpg", width="175", height="175", category="wine")
 					.product-name Wine
 
 				.col-md-3.col-sm-4.product
 					.product-image
-						img(src="https://www.saq.com/content/dam/saq/section-produits/icn-verres-spiritueux.jpg", width="150", height="150")
+						img(src="https://www.saq.com/content/dam/saq/section-produits/icn-verres-spiritueux.jpg", width="175", height="175", category="spirit")
 					.product-name Spirits
 
 				.col-md-3.col-sm-4.product
 					.product-image
-						img(src="https://www.saq.com/content/dam/saq/section-produits/icn-verres-champagne-mousseux.jpg", width="150", height="150")
+						img(src="https://www.saq.com/content/dam/saq/section-produits/icn-verres-champagne-mousseux.jpg", width="175", height="175", category="champagne")
 					.product-name Champagne
 
 				.col-md-3.col-sm-4.product
 					.product-image
-						img(src="https://www.saq.com/content/dam/saq/section-produits/icn-verres-porto-vins-fortifies.jpg", width="150", height="150")
+						img(src="https://www.saq.com/content/dam/saq/section-produits/icn-verres-porto-vins-fortifies.jpg", width="175", height="175", category="porto")
 					.product-name Porto
 				
 				.col-md-3.col-sm-4.product
 					.product-image
-						img(src="https://www.saq.com/content/dam/saq/section-produits/icn-verres-vins-dessert.jpg", width="150", height="150")
+						img(src="https://www.saq.com/content/dam/saq/section-produits/icn-verres-vins-dessert.jpg", width="175", height="175", category="dessert")
 					.product-name Dessert Wine
 					
 				.col-md-3.col-sm-4.product
 					.product-image
-						img(src="https://www.saq.com/content/dam/saq/section-produits/icn-verres-aperitifs.jpg", width="150", height="150")
+						img(src="https://www.saq.com/content/dam/saq/section-produits/icn-verres-aperitifs.jpg", width="175", height="175", category="aperatif")
 					.product-name Aperatif
 				
 				.col-md-3.col-sm-4.product
 					.product-image
-						img(src="https://www.saq.com/content/dam/saq/section-produits/icn-verres-boissons-rafraichissantes.jpg", width="150", height="150")
+						img(src="https://www.saq.com/content/dam/saq/section-produits/icn-verres-boissons-rafraichissantes.jpg", width="175", height="175", category="cooler")
 					.product-name Coolers and Cocktails
 					
 				.col-md-3.col-sm-4.product
 					.product-image
-						img(src="https://www.saq.com/content/dam/saq/section-produits/icn-verres-biere.jpg", width="150", height="150")
+						img(src="https://www.saq.com/content/dam/saq/section-produits/icn-verres-biere.jpg", width="175", height="175", category="beer")
 					.product-name Beer
 		
 		// Search Results
+		.results-header
 		.results
-			.results-header
