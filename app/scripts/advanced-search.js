@@ -155,8 +155,13 @@ function pretty(result, index) {
 	prettyResult += '</div>';
 	
 	// Price rounded to 2 decimal points
-	var resultPrice = parseFloat(Math.round(result.raw.tpprixnum * 100) / 100).toFixed(2);
-	prettyResult += '<div class="result-price">'+resultPrice+'$<div/>';
+	if (result.raw.tpprixnum) {
+		var resultPrice = parseFloat(Math.round(result.raw.tpprixnum * 100) / 100).toFixed(2);
+		prettyResult += '<div class="result-price">'+resultPrice+'$<div/>';
+	} else {
+		prettyResult += '<div class="result-price">No price<div/>';
+
+	}
 	prettyResult += '</div>';
 
 	return prettyResult;

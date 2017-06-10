@@ -141,7 +141,13 @@ function pretty(result, index) {
 	prettyResult += '</div>';
 	
 	// Price
-	prettyResult += '<div class="result-price">'+result.raw.tpprixnormal+'<div/>';
+	if (result.raw.tpprixnum) {
+		var resultPrice = parseFloat(Math.round(result.raw.tpprixnum * 100) / 100).toFixed(2);
+		prettyResult += '<div class="result-price">'+resultPrice+'$<div/>';
+	} else {
+		prettyResult += '<div class="result-price">No price<div/>';
+
+	}
 	prettyResult += '</div>';
 
 	return prettyResult;

@@ -28,9 +28,12 @@ var styleOutputProd = 'dist/css';
 
 // Javascript
 var js = 'app/scripts/*.js';
-var jsMain = 'app/scripts/main.js';
-var jsOutputDev = 'app/scripts';
-var jsOutputProd = 'dist/scripts';
+var jsOutputDev = 'app';
+var jsOutputProd = 'dist';
+
+// Images
+var images = 'app/images/*';
+var imageOutput = 'dist/images';
 
 /**
  * Gulp tasks
@@ -45,7 +48,7 @@ gulp.task('pug', function() {
 	.pipe(browserSync.stream());
 });
 
-// Compile and prefix sass
+// Compile, minify and prefix sass
 gulp.task('sass', function() {
 	return gulp.src(stylesMain)
 	.pipe(sass({ outputStyle: 'compressed' }))
@@ -56,23 +59,41 @@ gulp.task('sass', function() {
 	.pipe(browserSync.stream());
 });
 
+// Minify and concat javascript
+gulp.task('js', function() {
+	return gulp.src(js)
+	.pipe(concat('main.js'))
+	.pipe(uglify())
+	.pipe(gulp.dest(jsOutputDev))
+	.pipe(gulp.dest(jsOutputProd))
+});
+
+// Copy images to dist
+gulp.task('images', function() {
+	return gulp.src(images)
+	.pipe(gulp.dest(imageOutput));
+});
+
 // Watch files for changes
 gulp.task('serve', function() {
+
 	// Initialize BrowserSync
 	browserSync.init({
 		server: "app"
 	});
 	
-	// Watch all subfiles
+	// Run scripts on change
 	gulp.watch(views, ['pug']);
-	gulp.watch(styles, ['sass']); 
+	gulp.watch(styles, ['sass']);
+	gulp.watch(js, ['js']);
 
 	// Reload when index.pug changes
 	gulp.watch(viewsMain).on('change', browserSync.reload);
+
 });
 
 // Inital task run 
-gulp.task('build', ['pug', 'sass']);
+gulp.task('build', ['pug', 'sass', 'js', 'images']);
 
 // Default task
 gulp.task('default', ['build', 'serve']);
