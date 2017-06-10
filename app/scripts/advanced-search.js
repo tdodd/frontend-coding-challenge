@@ -6,20 +6,38 @@ $(document).ready(function() {
 	// Advanced search options
 	var options = {};
 
-	// Add listener to sidebar search
+	// Add listener to sidebar search input
 	$('.sidebar-search-input').on('keyup', function(event) {
 
 		event.preventDefault();
+
 		if (event.key === 'Enter') {
+			// Get price from range slider
 			var price = ($('#price')[0].valueAsNumber + 1);
 			advancedSearch($('.sidebar-search-input').val(), options, price);
+			// Reset options
+			options = {};
 		}
+
+	});
+
+	// Add listeners to sidebar search buttons
+	$('.sidebar-btn').click(function(event) {
+
+		event.preventDefault();
+
+		// Get price from range slider
+		var price = ($('#price')[0].valueAsNumber + 1);
+		advancedSearch($('.sidebar-search-input').val(), options, price);
+		// Reset options
+		options = {};
 
 	});
 
 	// Add listeners to checkboxes
 	$('.sidebar-input').click(function() {
 
+		// Add new key/value pair to options
 		var col = $(this).attr('dbcol');
 		var val = $(this).attr('value');
 		options[col] = val;
@@ -68,6 +86,7 @@ function advancedSearch(query, options, maxPrice) {
 
 		// Hide loading animation
 		$('.loading').hide();
+		$('.no-results').hide();
 
 		// If results are found
 		if (data.results.length > 0) {
@@ -85,7 +104,9 @@ function advancedSearch(query, options, maxPrice) {
 			});
 
 		} else { // No results found
-			$('.results-header').text('No results found.');
+			$('.results-header').html('');
+			$('.no-results').text('No results found.');
+			$('.no-results').fadeIn('slow');
 		}
 
 	});

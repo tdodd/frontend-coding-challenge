@@ -72,6 +72,7 @@ function search(query) {
 
 		// Hide loading animation
 		$('.loading').hide();
+		$('.no-results').hide();
 
 		// If results are found
 		if (data.results.length > 0) {
@@ -89,7 +90,9 @@ function search(query) {
 			});
 
 		} else { // No results found
-			$('.results-header').text('No results found.');
+			$('.results-header').html('');
+			$('.no-results').text('No results found.');
+			$('.no-results').fadeIn('slow');
 		}
 
 	});
@@ -106,11 +109,11 @@ function pretty(result, index) {
 
 	var prettyResult = '';
 
-	// Add id
+	// Add id to container
 	prettyResult += '<div class="result" id="result-'+index+'">';
 	
 	// Check if title fits on 2 lines
-	if (result.Title.length <= 40) {
+	if (result.Title.length < 35) {
 
 		prettyResult += '<div class="result-title"><a target="_blank" href="'+result.ClickUri+'">'+result.Title+'</a></div>';
 	
