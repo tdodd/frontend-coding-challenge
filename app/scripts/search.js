@@ -26,8 +26,20 @@ $(document).ready(function() {
 
 	// Add listener to search icon
 	$('#search-icon').click(function(event) {
+
 		event.preventDefault();
-		search($('#search-input').val());
+
+		// Check if search is empty
+		if ($('#search-input').val() == '') {
+
+			$('.error').show();
+
+		} else {
+
+			search($('#search-input').val());
+
+		}
+
 	});
 
 	// Add listener to category images
@@ -74,7 +86,7 @@ function search(query) {
 		$('.loading').hide();
 		$('.no-results').hide();
 
-		// If results are found
+		// If results are found for the query
 		if (data.results.length > 0) {
 
 			// Convert query duration to seconds
